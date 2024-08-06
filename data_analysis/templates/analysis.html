@@ -1,0 +1,15 @@
+<h2>Data Analysis Results</h2>
+
+<h3>First Few Rows</h3>
+{{ head|safe }}
+
+<h3>Summary Statistics</h3>
+{{ summary|safe }}
+
+<h3>Missing Values</h3>
+{{ missing_values|safe }}
+
+<h3>Histograms</h3>
+{% for plot in plots %}
+    <img src="data:image/png;base64,{{ plot }}" alt="Histogram">
+{% endfor %}
